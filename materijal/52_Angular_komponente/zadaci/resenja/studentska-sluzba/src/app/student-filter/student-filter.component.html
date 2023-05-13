@@ -1,0 +1,11 @@
+<p>Extra filtering:</p>
+
+<label for="input-treshold">AverageHigherThan: </label>
+<input type="number" step="0.1" name="input-treshold" [(ngModel)]="selectedAverage">
+<button (click)="showWithAverageHigherThan()">Show</button>
+<br>
+<button (click)="showWithHighestAverage()">Show with highest average</button>
+<br>
+<button (click)="showForNextYear()">Show for next year</button>
+
+<app-student-list *ngIf="foundStudents.length" [students]="foundStudents"></app-student-list>

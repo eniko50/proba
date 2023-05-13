@@ -1,0 +1,48 @@
+{
+	"variables": [],
+	"info": {
+		"name": "StudentSecurity",
+		"_postman_id": "eb5b6e55-832e-aa8a-c971-04da0ecb540b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login student",
+			"request": {
+				"url": "localhost:8080/api/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"admin\",\n\t\"password\": \"12345\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Login as admin",
+			"request": {
+				"url": "http://localhost:8080/api/students",
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImNyZWF0ZWQiOjE1MDQyNjU3MTc0MjcsImV4cCI6MTUwNDI4MzcxN30.CwW8W-Z8tno3E-0ww-9-kW4ON38AHcnWKVHrZEyfSmpLZe8WeTr7mi3hO1dJFKO9T_4jt6IpECaP1mqdhHTG-g",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,6 @@
+01 - Posta
+02 - Temperatura
+03 - Krug
+04 - Pravougaonik
+05 - Cena
+06 - Student

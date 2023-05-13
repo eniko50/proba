@@ -1,0 +1,13 @@
+<td>
+	{{record.title}}
+</td>
+<td>
+	{{record.author.name}}
+</td>
+<td>
+	{{record.price}}
+</td>
+<td>
+	<button class="btn btn-danger" (click)="deleteRecord(record.id)">remove</button>
+	<button class="btn btn-primary" (click)="details(record.id)">details</button>
+</td>

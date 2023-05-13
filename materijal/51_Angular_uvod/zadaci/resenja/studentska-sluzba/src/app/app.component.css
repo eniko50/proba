@@ -1,0 +1,155 @@
+body {
+    font-size: 1.2em;
+    font-family: Arial;
+    color: #535346;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.card {
+    width: 60%;
+    display: block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    margin-bottom: 0.5em;
+    padding: 2%;
+    background-color: #fafafa;
+}
+
+.card-actions {
+    display: inline-block;
+    width: 50%;
+    text-align: right;
+}
+
+button {
+    border-radius: 5px;
+    border-width: 1px;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    font-family: Arial;
+    font-size: 15px;
+    padding: 4% 5%;
+}
+
+.action-btn {
+    background-color: #599bb3;
+}
+
+.details-btn {
+    background-color: #44c767;
+}
+
+.card-content {
+    display: inline-block;
+    width: 46%;
+    font-size: 1.2em;
+    font-family: Arial;
+    color: #535346;
+}
+
+.panel {
+    display: block;
+    padding: 2%;
+}
+
+.list {
+    display: inline-block;
+    width: 65%;
+}
+
+.search {
+    float: right;
+    margin-top: 2%;
+    width: 30%;
+    border-radius: 7px;
+    border: 1.8px solid #89ef56;
+    padding-bottom: 2%;
+}
+
+.search-content {
+    padding: 2% 2% 2% 8%;
+}
+
+.search-heading {
+    height: 35px;
+    background: #49d84e;
+    font-size: 1.5em;
+    color: #535346;
+    text-align: center;
+}
+
+.filter {
+    padding: 1.2%;
+}
+
+.student-options {
+    width: 80%;
+}
+
+.student-exams {
+    margin: 2%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.heading {
+    background-color: #599bb3;
+    color: white;
+    font-size: 1.2em;
+    padding: 1.2%;
+}
+
+.add-exam-heading {
+    width: 28%;
+    border-right: 1px solid #ffffff;
+    text-align: center;
+}
+
+.info-exam-heading {
+    width: 40%;
+    border-right: 1px solid #ffffff;
+}
+
+.heading div {
+    display: inline-block;
+}
+
+.exams-content {
+    display: block;
+    padding-bottom: 2%;
+    padding-left: 2%;
+}
+
+.exams-list {
+    width: 40%;
+    display: inline-block;
+}
+
+.form {
+    width: 28%;
+    display: inline-block;
+    padding: 1.2% 0 0 1.5%;
+}
+
+.form-fields {
+    display: block;
+    padding-top: 1.2%;
+}
+
+.form-fields label,
+input {
+    display: inline-block;
+}
+
+.form-fields label {
+    width: 18%;
+}
+
+.form-fields input {
+    width: 80%;
+}

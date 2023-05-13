@@ -1,0 +1,89 @@
+
+<div class="col-sm-8">
+
+
+
+    <div>
+        <form class="form-inline" (ngSubmit) = "setProjectName()">
+              
+           <div class="form-group">
+              <label for="projectName">Name</label>
+              <input class="form-control" name="projectName" id="projectName" [(ngModel)]="projectName"/>	
+           </div>
+                <button class="btn btn-secondary" type = "submit">filter</button>
+                <button class="btn btn-secondary" (click)="resetFilter()">Clear</button>
+              </form>        
+             
+  </div>
+
+
+<div class="row" *ngIf="page">
+    <table class="table">
+      <thead>
+        <tr>
+          
+          <th>Name</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let project of page.content; let i = index">
+         
+          <th>{{ project.name }}</th>
+          <th>{{ project.description }}</th> 
+         
+          
+          <button type="button" class="btn btn-primary" [routerLink]="['/details', project.id]">Details</button><br>
+          <button type="button" class="btn btn-light" (click)="setProjectToUpdate(project.id)">Edit</button><br>
+          <button type="button" class="btn btn-danger" (click)="delete(project.id)">Delete</button><br>
+
+        </tr>
+      </tbody>
+    </table>
+  
+    <button [disabled]="page.first" (click)="previousPage()">previous page</button>
+    <button [disabled]="page.last" (click)="nextPage()">next page</button>
+  </div> 
+
+</div> 
+
+
+
+
+
+<div class="col-sm-4">
+
+    <div class="container ">
+        <form class="form-horizontal" (ngSubmit)="update()">
+            
+          
+          <div class="form-group">
+            <label class="control-label col-sm-3" for="input-name">Name:</label>
+            <div class="col-sm-4">
+                <input class="form-control" name="input-name" id="input-name" [(ngModel)]="newProject.name"/>
+              </div>
+          </div>
+          <div class="form-group">
+              <label class="control-label col-sm-3" for="input-description">Description:</label>
+              <div class="col-sm-4">
+                  <input class="form-control" name="input-description" id="input-description" [(ngModel)]="newProject.description"/>
+                </div>
+            </div>
+           
+          <div class="form-group">
+              <label class="control-label col-sm-3" for="input-readme">Readme:</label>
+              <div class="col-sm-4">
+                  <input class="form-control" name="input-readme" id="input-readme" [(ngModel)]="newProject.readme"/>
+                </div>
+            </div>
+
+            <div class="form-group save" >
+                <input class="btn btn-primary" type="submit" value="save"/>
+                <button class="btn btn-secondary" (click)="resetEdit()">Cancel</button>
+          </div> 
+
+        </form>      
+      </div>
+</div>
+

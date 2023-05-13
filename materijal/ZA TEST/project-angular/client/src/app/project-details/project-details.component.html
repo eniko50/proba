@@ -1,0 +1,40 @@
+<h1>{{ project.name }}</h1>
+<h5>{{ project.description }}</h5><br>
+
+<h5>{{ project.readme }}</h5>
+
+<table class="table">
+        <thead>
+                <tr>
+                  <th>Comment</th>
+                  <th>Username</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                    <tr *ngFor = "let c of project.comment;">
+                      <th>{{c.username}}</th>
+                      <td>{{c.text}}</td>
+                   </tr>
+                </tbody>
+            </table>   
+
+<div class="container ">
+    <form class="form-horizontal" (ngSubmit)="addComment()">
+        <div class="form-group">
+            <label class="control-label col-sm-1" for="input-comment">Comment:</label>
+            <div class="col-sm-4">
+                <input class="form-control" name="input-comment" id="input-comment" [(ngModel)]="newComment.text"/>
+            </div>
+         </div>
+        <div class="form-group">
+            <label class="control-label col-sm-1" for="input-username">Nickname:</label>
+            <div class="col-sm-4">
+                <input class="form-control" name="input-username" id="input-username" [(ngModel)]="newComment.username"/>
+            </div>
+        </div>
+        <div class="form-group save">
+            <input class="btn btn-primary" type="submit" value="save"/>
+       </div>
+    </form>
+</div>

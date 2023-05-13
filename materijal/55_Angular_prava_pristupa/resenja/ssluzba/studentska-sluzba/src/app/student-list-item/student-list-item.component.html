@@ -1,0 +1,6 @@
+<div>
+  <div>{{student.firstName}} {{student.lastName}} {{student.cardNumber}}</div>
+  <button *ngIf="isAdministrator" [disabled]="!isDeletingAllowed()" (click) = "deleteStudent()" title="Moguće je obrisati studenta koji nema ispite">Obriši</button>
+  <button *ngIf="isAdministrator" (click) = "editStudent()">Izmeni</button>
+  <a [routerLink]="['/studenti',student.id]">Info</a>
+</div>

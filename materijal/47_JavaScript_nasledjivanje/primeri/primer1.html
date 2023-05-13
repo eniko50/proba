@@ -1,0 +1,48 @@
+<html>
+<head>
+	<title>primer 1</title>
+	<script type="text/javascript">
+	var Osoba = function (spec) { 
+		if(spec){
+			this.ime = spec.ime;
+			this.prezime = spec.prezime;
+		}
+	};
+	Osoba.prototype.predstaviSe = function () { 
+		return "Ja se zovem " + this.ime + " " + this.prezime;
+	};
+	var markoMarkovic = new Osoba({ime:"Marko", prezime:"Markovic"});
+	console.log(markoMarkovic.predstaviSe());
+	var Student = function(spec){
+		this.constructor.apply(this,[spec]);
+		this.smer = spec.smer;
+		this.ocene = spec.ocene;
+	};
+	Student.prototype = new Osoba();
+	Student.prototype.getCV = function () {
+		return "studiram na smeru " + 
+		this.smer + 
+		" i imam sledece ocene"  + 
+		this.ocene;
+	};
+	Student.prototype.predstaviSe = function () {
+		return "zovem se " + this.ime + " " +
+		this.prezime + 
+		" i studiram na smeru "+this.smer;
+	};
+	var peraPeric = new Student({ime:"Pera",
+		prezime:"Peric",
+		smer:"Racunarstvo i automatika",
+		ocene:[
+			{predmet:"Web programiranje", 
+			 ocena:9},
+			{predmet:"Operativni sistemi",
+		     ocena:10}]});
+	console.log(peraPeric.getCV());
+	console.log(peraPeric.predstaviSe());
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,239 @@
+<div>
+    <div class="panel">
+        <div class="list">
+            <ul>
+                <li *ngFor="let student of studentsClone; let i = index;">
+                    <div class="card">
+                        <div class="card-content">
+                            <div>Broj indeksa: {{student.studentNumber}}</div>
+                            <div>Ime: {{student.name}}</div>
+                            <div>Prezime: {{student.surname}}</div>
+                        </div>
+                        <div class="card-actions">
+                            <span><button class="action-btn" type="button" (click)="setStudentForEditing(i)">Izmeni</button></span>
+                            <span><button class="action-btn" type="button" (click)="deleteStudent(i)">Obriši</button></span>
+                            <span><button class="details-btn" type="button" (click)="viewExams(i)">Prikaži ispite</button></span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="search">
+            <div class="search-heading">
+                Pretraga/filtriranje studenata
+            </div>
+            <div class="search-content">
+                <div class="filter">
+                    <div>
+                        <button type="button" class="action-btn" (click)="findBestStudent()">Student sa najvecom ocenom</button>
+                    </div>
+                    <div>
+                        <button type="button" class="action-btn" (click)="sortByAverageGrade(order.ASC)">Sortiraj po prosecnoj oceni (asc)</button>
+                    </div>
+                    <div>
+                        <button type="button" class="action-btn" (click)="sortByAverageGrade(order.DESC)">Sortiraj po prosecnoj oceni (desc)</button>
+                    </div>
+                    <div>
+                        <button type="button" class="action-btn" (click)="findStudentsForNextYear()">Studenti za upis naredne godine</button>
+                    </div>
+                </div>
+                <div>
+                    <form (ngSubmit)="searchByStudentNumber()">
+                        <div>Pretraži po indeksu: </div>
+                        <span><input name="input-searchByStudentNumber" [(ngModel)]="searchStudentNumber" /></span>
+                        <input type="submit" value="Traži" />
+                    </form>
+                </div>
+
+                <div>
+                    <form (ngSubmit)="searchByGradeGraterThan()">
+                        <div>Pretraži po oceni većoj od: </div>
+                        <span><input name="input-gradeGraterThan" [(ngModel)]="gradeGraterThan" /></span>
+
+                        <input type="submit" value="Traži" />
+                    </form>
+                </div>
+                <br/>
+                <div>
+                    <button type="button" class="action-btn" (click)="resetStudentSearch()">Resetuj pretragu</button>
+                </div>
+            </div>
+        </div>
+        <div class="student-options">
+            <div class="form">
+                <div class="heading">Dodaj studenta</div>
+                <form (ngSubmit)="addStudent()">
+                    <div class="form-fields">
+                        <label for="input-studentNumber">Broj indeksa:</label>
+                        <input name="input-studentNumber" [(ngModel)]="newStudent.studentNumber" />
+                    </div>
+
+                    <div class="form-fields">
+                        <label for="input-name">Ime:</label>
+                        <input name="input-name" [(ngModel)]="newStudent.name" />
+                    </div>
+
+                    <div class="form-fields">
+                        <label for="input-surname">Prezime:</label>
+                        <input name="input-surname" [(ngModel)]="newStudent.surname" />
+                    </div>
+
+                    <input type="submit" value="Sačuvaj" />
+                </form>
+            </div>
+            <div class="form">
+                <div class="heading">Izmeni studenta</div>
+                <form (ngSubmit)="editStudent()">
+                    <div class="form-fields">
+                        <label for="input-studentNumber">Broj indeksa:</label>
+                        <input name="input-studentNumber" [(ngModel)]="studentToEdit.studentNumber" disabled readonly/>
+                    </div>
+
+                    <div class="form-fields">
+                        <label for="input-name">Ime:</label>
+                        <input name="input-name" [(ngModel)]="studentToEdit.name" />
+                    </div>
+
+                    <div class="form-fields">
+                        <label for="input-surname">Prezime:</label>
+                        <input name="input-surname" [(ngModel)]="studentToEdit.surname" />
+                    </div>
+
+                    <input type="submit" value="Sačuvaj" />
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="student-exams">
+        <div class="heading">
+            <div class="info-exam-heading">Ispiti studenta: {{activeStudent.studentNumber}}</div>
+            <div class="add-exam-heading">Dodaj ispit</div>
+            <div class="add-exam-heading">Izmeni ispit</div>
+        </div>
+        <div class="exams-content">
+            <div class="exams-list">
+                <ul>
+                    <li *ngFor="let exam of activeStudent.passedExams;let i = index;">
+                        <div>
+                            <div class="card-content">
+                                <div>Predmet: {{exam.subject.title}}</div>
+                                <div>Ocena: {{exam.grade}}</div>
+                            </div>
+                            <div class="card-actions">
+                                <span><button class="action-btn" type="button" (click)="setExamForEditing(i)">Izmeni</button></span>
+                                <span><button class="action-btn" type="button" (click)="deleteExam(i)">Obriši</button></span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="form">
+                <form (ngSubmit)="addExam()">
+                    <div class="form-fields">
+                        <label for="input-exam-subjectId">Šifra predmeta:</label>
+                        <input name="input-exam-subjectId" [(ngModel)]="newExam.subject.id" />
+                    </div>
+
+                    <div class="form-fields">
+                        <label for="input-grade">Ocena:</label>
+                        <input name="input-grade" type="number" [(ngModel)]="newExam.grade" />
+                    </div>
+
+                    <input type="submit" value="Sačuvaj" />
+                </form>
+            </div>
+            <div class="form">
+                <form (ngSubmit)="editExam()">
+                    <div class="form-fields">
+                        <label for="input-exam-subjectId">Šifra predmeta:</label>
+                        <input name="input-exam-subjectId" [(ngModel)]="examToEdit.subject.id" readonly disabled/>
+                    </div>
+
+                    <div class="form-fields">
+                        <label for="input-grade">Ocena:</label>
+                        <input name="input-grade" type="number" [(ngModel)]="examToEdit.grade" />
+                    </div>
+
+                    <input type="submit" value="Sačuvaj" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel">
+    <div class="list">
+        <ul>
+            <li *ngFor="let subject of subjectsClone; let i = index;">
+                <div class="card">
+                    <div class="card-content">
+                        <div>Šifra predmeta: {{subject.id}}</div>
+                        <div>Naziv: {{subject.title}}</div>
+                        <div>EspbPoints: {{subject.espbPoints}}</div>
+                    </div>
+                    <div class="card-actions">
+                        <span><button class="action-btn" type="button" (click)="setSubjectForEditing(i)">Izmeni</button></span>
+                        <span><button class="action-btn" type="button" (click)="deleteSubject(i)">Obriši</button></span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="search">
+        <div class="search-heading">Pretraga/filtriranje predmeta</div>
+        <div class="search-content">
+            <form (ngSubmit)="searchBySubjectId()">
+                <div>Pretraži predmete po šifri: </div>
+                <span><input name="input-searchBySubjectId" [(ngModel)]="searchSubjectId" /></span>
+
+                <input type="submit" value="Traži" />
+            </form>
+            <br/>
+            <div>
+                <button type="button" class="action-btn" (click)="resetSubjectSearch()">Resetuj pretragu</button>
+            </div>
+        </div>
+    </div>
+    <div class="form">
+        <div class="heading">Dodaj predmet</div>
+        <form (ngSubmit)="addSubject()">
+            <div class="form-fields">
+                <label for="input-subjectId">Šifra:</label>
+                <input name="input-subjectId" [(ngModel)]="newSubject.id" />
+            </div>
+
+            <div class="form-fields">
+                <label for="input-title">Naziv:</label>
+                <input name="input-title" [(ngModel)]="newSubject.title" />
+            </div>
+
+            <div class="form-fields">
+                <label for="input-espbPoints">Espb poeni:</label>
+                <input name="input-espbPoints" type="number" [(ngModel)]="newSubject.espbPoints" />
+            </div>
+
+            <input type="submit" value="Sačuvaj" />
+        </form>
+    </div>
+    <div class="form">
+        <div class="heading">Izmeni predmet</div>
+        <form (ngSubmit)="editSubject()">
+            <div class="form-fields">
+                <label for="input-subjectId">Šifra:</label>
+                <input name="input-subjectId" [(ngModel)]="subjectToEdit.id" readonly disabled/>
+            </div>
+
+            <div class="form-fields">
+                <label for="input-title">Naziv:</label>
+                <input name="input-title" [(ngModel)]="subjectToEdit.title" />
+            </div>
+
+            <div class="form-fields">
+                <label for="input-espbPoints">Espb poeni:</label>
+                <input name="input-espbPoints" type="number" [(ngModel)]="subjectToEdit.espbPoints" />
+            </div>
+
+            <input type="submit" value="Sačuvaj" />
+        </form>
+    </div>
+</div>

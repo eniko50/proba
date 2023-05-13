@@ -1,0 +1,17 @@
+<form (ngSubmit)="addRecord()">
+	
+	<label for="input-title">title: </label>
+		<input name="input-title" id="input-title" [(ngModel)]="newRecord.title"/><br/>
+	
+	<label for="input-author">author: </label>
+		<input name="input-author" id="input-author" [(ngModel)]="newRecord.author"/><br/>
+	
+	<label for="input-image-url">imageUrl: </label>
+		<input name="input-image-url" id="input-image-url" [(ngModel)]="newRecord.imageUrl"/><br/>
+
+	<label for="input-price">price: </label>
+		<input name="input-price" id="input-price" [(ngModel)]="newRecord.price"/><br/>
+	
+	<input type="submit" value="save"/>
+
+</form>

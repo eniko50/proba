@@ -1,0 +1,4 @@
+1 - RelacioniILogickiOperatori
+2 - NaredbaIf
+3 - NaredbaSwitch
+4 - Enumeracija

@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title>primer 2</title>
+	<script type="text/javascript">
+	var osoba = { 
+		predstaviSe: function() {
+			return "Ja se zovem " + 
+			this.ime + " " + this.prezime;       	     
+		}    
+	}
+	var markoMarkovic = Object.create(osoba);
+	markoMarkovic.ime = "Marko";
+	markoMarkovic.prezime = "Markovic";
+	var student = Object.create(osoba);
+	student.getCV = function () {
+		return "studiram na smeru "+
+		this.smer+ 
+		" i imam sledece ocene "+
+		this.getOcene();
+	}
+	var peraPeric = Object.create(student);
+	peraPeric.ime = "Pera";
+	peraPeric.prezime = "Peric";
+	peraPeric.smer = "Racunarstvo i automatika";
+	peraPeric.ocene = [{predmet:"Web programiranje", 			    ocena:9},
+	{predmet:"Operativni sistemi",
+	ocena:10}];
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

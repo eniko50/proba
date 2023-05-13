@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title>Studentska sluzba</title>
+	<script type="text/javascript" src="studenti.js"></script>
+	<script type="text/javascript" src="resenja.js"></script>
+</head>
+<body>
+	<h1>Studenti:</h1>
+	ime:<input id="ime"/><br/>
+	prezime:<input id="prezime"/><br/>
+	broj indeksa:<input id="brojIndeksa"/><br/>
+	godina studija:<input id="godinaStudija"/><br/>
+	<button onclick="dodajStudentaSaHTML()">dodaj</button>
+	<button onclick="izmeniPodatkeOStudentuSaHTML()">izmeni</button>
+	<br/><hr/>
+	prosecna ocena:<input id="prosecnaOcena"/><button onclick="filtriraj()">filtriraj</button><br/><hr/>
+	broj indeksa:<input id="ispitBrojIndeksa"/><br/>
+	ocena:<input id="ocena"/><br/>
+	naziv predmeta:<input id="nazivPredmeta"/><br/>
+	sifra:<input id="sifraPredmeta"/><br/>
+	espb:<input id="espb"/><br/>
+	<button onclick="dodajIspitSaHTML()">dodaj</button>
+
+ <br/>
+
+	<ul id="studenti">
+	</ul>
+	<div id="ispiti">
+	</div>
+	<script type="text/javascript">
+		prikaziStudente(studenti);
+	</script>
+</body>
+</html>

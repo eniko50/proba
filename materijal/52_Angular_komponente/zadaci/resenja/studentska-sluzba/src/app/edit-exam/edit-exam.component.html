@@ -1,0 +1,12 @@
+<div *ngIf="exam">
+  <p>Edit exam:</p>
+  <form (ngSubmit)="save()">
+    <br>
+    Subject {{exam.subject.name}} with code {{exam.subject.code}}
+    <br>
+    <label for="input-mark">Mark:</label>
+    <input type="number" name="input-mark" [(ngModel)]="exam.mark">
+    <br>
+    <input type="submit" value="save">
+  </form>
+</div>

@@ -1,0 +1,15 @@
+<div>
+  <label for="filter-grade">Prosecna ocena:</label>
+  <input name="filter-grade" type="text" [(ngModel)] = "averageGrade"/>
+  <button type="button" (click)="filterByAvgGradeGraterThan()">Prikaži</button>
+  <br/>
+  <button type="button" (click)="filterByMaxGrade()">Student sa najvšom prosečnom ocenom</button>
+  <br/>
+  <button type="button" (click)="sortByAvgGrade(orderTypes.asc)">Sortiraj po prosečnoj oceni (asc)</button>
+  <br/>
+  <button type="button" (click)="sortByAvgGrade(orderTypes.desc)">Sortiraj po prosečnoj oceni (desc)</button>
+  <br/>
+  <button type="button" (click)="filterByNextYearCondition()">Pronadji za upis naredne godine</button>
+  <br/>
+  <button type="button" (click)="reset()">Poništi filtere</button>
+</div>

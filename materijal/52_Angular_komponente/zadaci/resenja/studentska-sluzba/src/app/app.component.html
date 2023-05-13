@@ -1,0 +1,16 @@
+<div>
+      <app-new-student (addStudent)="studentService.addStudent($event)"></app-new-student>
+      <app-student-list [students]="studentService.students" (deleteStudentByIndex)="studentService.deleteStudent($event)" (showStudentByIndex)="showStudent($event)"></app-student-list>
+      <button (click)="studentService.sortByAverageMark()">Sort by average</button>
+      <app-student-edit [student]="shownStudent" (saveStudent)="studentService.updateStudent($event)" [subjects]="studentService.subjects" (saveExam)="addExam($event)" (deleteExam)="deleteExam($event)" (updateExam)="updateExam($event)"></app-student-edit>
+
+      <hr>
+
+      <app-new-subject (addSubject)="studentService.addSubject($event)"></app-new-subject>
+      <app-subject-list [subjects]="studentService.subjects" (deleteSubjectByCode)="studentService.deleteSubject($event)" (showSubjectByCode)="showSubject($event)"></app-subject-list>
+      <app-edit-subject [subject]="shownSubject" (saveSubject)="studentService.updateSubject($event)"></app-edit-subject>
+
+      <hr>
+
+      <app-student-filter [service]="studentService"></app-student-filter>
+</div>

@@ -1,0 +1,42 @@
+<h1>
+  Studentska služba
+</h1>
+
+<h1>Studenti:</h1>
+
+<span>
+  <app-search (setSearchTerm)="search($event)"></app-search>
+  <br/>
+  <app-filter (filteredByAvgGrade)="filterByAvgGrade($event)" (filteredByMaxGrade)="filterByMaxGrade()" (filteredByNextYearCondition)="filterByNextYearCondition()"
+    (sortedByAvgGrade)="sortByGrade($event)" (resetFilter)="loadData()">
+  </app-filter>
+</span>
+<br/>
+<app-student-list [students]="students" (studentDeleted)="deleteStudent($event)" (markStudentForEditing)="setActiveStudent($event)" (showStudentDetails)="showStudentInfo($event)"></app-student-list>
+<br/>
+<app-add-student-form (studentAdded)="addStudent($event)"></app-add-student-form>
+<br/>
+<app-edit-student-form (studentEdited)="editStudent($event)" [studentToEdit]="activeStudent"></app-edit-student-form>
+
+<hr>
+
+<div *ngIf="shownStudent">
+  <div>
+    <h1>Informacije o studentu</h1>
+    <div>Indeks: {{shownStudent.cardNumber}}</div>
+    <div>Ime: {{shownStudent.firstName}}</div>
+    <div>Prezime: {{shownStudent.lastName}}</div>
+    <div>Prosecna ocena: {{shownStudent.averageGrade()}}</div>
+  </div>
+
+  <h1>Ispiti:</h1>
+  <ul>
+    <li *ngFor="let exam of shownStudent.exams">
+      <div>Predmet:{{exam.course.name}}</div>
+      <div>Espb:{{exam.course.espb}}</div>
+      <div>Ocena: {{exam.grade}}</div>
+    </li>
+  </ul>
+  <app-add-exam-form [isDataFetched]="isDataFetched" [subjects]="availableSubjects" (examAdded)="addExam($event)">
+  </app-add-exam-form>
+</div>

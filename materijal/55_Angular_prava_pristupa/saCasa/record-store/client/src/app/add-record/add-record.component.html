@@ -1,0 +1,36 @@
+<div>
+	<form  class="form-horizontal" (ngSubmit)="addRecord()">
+		<div class="form-group">
+			<label class="control-label col-sm-1" for="input-title">title: </label>
+			<div class="col-sm-11">
+				<input class="form-control" name="input-title" id="input-title" [(ngModel)]="newRecord.title"/>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-1" for="input-author">author: </label>
+			<div class="col-sm-11">
+				<select class="form-control" name="input-author" id="input-author"  [(ngModel)]="newRecord.author">
+					<option *ngFor="let a of authors" [ngValue]="a">{{a.name}}</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="control-label col-sm-1" for="input-image-url">imageUrl: </label>
+			<div class="col-sm-11">
+				<input class="form-control" name="input-image-url" id="input-image-url" [(ngModel)]="newRecord.imageUrl"/>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="control-label col-sm-1" for="input-price">price: </label>
+			<div class="col-sm-11">
+				<input class="form-control" name="input-price" id="input-price" [(ngModel)]="newRecord.price"/>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<input class="btn btn-primary" type="submit" value="save"/>
+		</div>
+	</form>
+</div>

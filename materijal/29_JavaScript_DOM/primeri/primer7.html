@@ -1,0 +1,18 @@
+<html>
+<head>
+	<title>Primer 7</title>
+</head>
+<body>
+	<h1>Input element</h1>
+	<input id="input-1"/>
+	<button id="btn-1">prikazi</button>
+	
+	<script type="text/javascript">
+		function prikaziVrednost () {
+			vrednost = document.getElementById('input-1').value;
+			alert('Uneli ste: '+vrednost);
+		}
+		document.getElementById('btn-1').onclick = prikaziVrednost;
+	</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="studenti">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="student" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="student">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ime" type="xs:string"/>
+				<xs:element name="prezime" type="xs:string" />
+				<xs:element name="indeks" type="xs:string"/>
+			</xs:sequence>
+			<xs:attribute name="id" use="required" type="xs:integer" />
+			<xs:attribute name="obrisan">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="da"/>
+						<xs:enumeration value="ne"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

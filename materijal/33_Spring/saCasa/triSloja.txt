@@ -1,0 +1,15 @@
+
+Repository
+    - filtriranje
+    - dobavljanje
+    - brisanje
+    - cuvanje/update
+
+Service
+    - oslanja se na Repository
+    - poslovna logika aplikacije (pr: dobavljanje drzave za grad, ako ne postoji servis treba da javi gresku dalje)
+
+View/Controller:
+    - prikaz
+    - interakcija
+

@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <title>vinoteka</title>
+</head>
+<link rel="stylesheet" type="text/css" href="stil.css">
+<script>
+        function dodaj(ID){
+            var podaci=document.getElementById('red');
+            var tableRow = document.getElementById(ID);
+            
+            var rwk=podaci.insertRow();
+
+            for (j=0; j<3; j++){
+            rwk.innerHTML += '<td>'+tableRow.cells[j].innerHTML+'</td>';
+            }
+        }
+</script>
+
+<body>
+    <div class="header">
+        <h1>Vinoteka</h1>
+    </div>
+    <div id="tekst">
+        <p>Online prodavnica najpopularnijeg regionalnog vinskog portala
+            mediala.rs ekskluzivno je mesto za odabir i kupovinu
+            kvalitetnih vina pod najpovoljnijim uslovima.Uz raznovrstan
+            i pregledan izbor vina iz Srbije, regiona i sveta, čekaju vas
+            i sve bitne informacije o vinima u ponudi, a tu je i mogućnost
+            da pitate našeg stručnjaka sve što vas zanima u vezi kupovine
+            određenog vina!</p>
+        <p>Besplatna iporuka na kućnu adresu je za porudžbine iznad
+            8.000! Isporuka se vrši kurirskom službom City express i
+            važi za teritoriju cele Srbije.Za sve kupovine ukupne
+            vrednosti ispod 8.000 rsd i isporuku preko City express-a
+            trošak dostave iznosi 290 rsd bez obzira na broj vina koje
+            ste naručili.Navedeni iznos je jedinstven za sve adrese u
+            Srbiji!Kupci u Beogradu mogu izabrati isporuku preko
+            kurirske službe Potrčko i na taj način porudžbine obavljene
+            do 22 časa, dobiti „odmah za odmah” odnosno za par sati.
+            Takav način dostave iznosi 500 din bez obzira na iznos porudžbine.
+            Kupujte vina znalački, udobno i povoljno!
+        </p>
+        <p>Kupujte vina znalacki, udobno i povolno!</p>
+        <table>
+            <h2>Nasa ponuda</h2>
+            <th>Vrsta</th>
+            <th>Vinarija</th>
+            <th>Godina</th>
+            <th>Cena</th>
+            <th>Kupovina</th>
+            <tr id="r1">
+                <td>Merlot</td>
+                <td>Mackov podrum</td>
+                <td>2014</td>
+                <td>750</td>
+                <td><button onclick="dodaj('r1')">Dodaj u korpu</button></td>
+            </tr>
+            <tr id="r2">
+                <td>Cabernet sauvignon</td>
+                <td>Podrum Petrovic</td>
+                <td>2013</td>
+                <td>650</td>
+                <td><button onclick="dodaj('r2')">Dodaj u korpu</button></td>
+            </tr>
+            <tr id="r3">
+                <td>Cabernet Franc</td>
+                <td>Podrum Petrovic</td>
+                <td>2013</td>
+                <td>700</td>
+                <td><button onclick="dodaj('r3')">Dodaj u korpu</button></td>
+            </tr>
+            <tr id="r4">
+                <td>Rajnski riesling</td>
+                <td>Podrum Zivanovic</td>
+                <td>2015</td>
+                <td>700</td>
+                <td><button onclick="dodaj('r4')">Dodaj u korpu</button></td>
+            </tr>
+        </table>
+        <table id="tabela">
+            <h2>Korpa</h2>
+            <th>
+                Vrsta
+            </th>
+            <th>Vinarija</th>
+            <th>Godina</th>
+            <tbody id="red" class="bibi">
+
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

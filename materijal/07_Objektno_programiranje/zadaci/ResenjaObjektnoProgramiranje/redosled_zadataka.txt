@@ -1,0 +1,36 @@
+01 - 
+	vp.objektnoprogramiranje.student
+		Student.java
+		Test.java
+	
+02 - 
+	vp.objektnoprogramiranje.student
+		Student.java
+		TestStudentNiz.java
+
+03 - 
+	vp.objektnoprogramiranje.ispiti
+		Student.java
+		
+		a) Student::ispisiStudenta()
+		b) Student::oceneIznad(int )
+		c) Student::oceneIznad(int , int )
+		d) Student::prosecnaOcena()
+		e) Student::najboljiIspit()
+		f) Student::najlosijiIspit()
+		
+04 - 
+	vp.objektnoprogramiranje.ispiti
+		Student.java
+		TestStudentIspiti.java
+		
+05 -
+	vp.objektnoprogramiranje.predmeti
+		Predmet.java
+		TestPredmet.java
+		
+06 - 
+	vp.objektnoprogramiranje.predmeti
+		Predmet.java
+		Student.java
+		TestStudentPredmeti.java

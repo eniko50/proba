@@ -1,0 +1,14 @@
+<div>
+  <form (ngSubmit) = "editStudent()">
+    <label for="student-number">Indeks</label>
+    <input name="student-number" type="text" [(ngModel)] = "studentToEdit.cardNumber" disabled placeholder="Indeks"/>
+    <br/>
+    <label for="student-firstname">Ime:</label>
+    <input name="student-firstname" type="text" [(ngModel)] = "studentToEdit.firstName" placeholder="Ime"/>
+    <br/>
+    <label for="student-lastname">Prezime:</label>
+    <input name="student-lastname" type="text" [(ngModel)] = "studentToEdit.lastName" placeholder="Prezime"/>
+    <br/>
+    <input type="submit" value="Izmeni"/>
+  </form>
+</div>

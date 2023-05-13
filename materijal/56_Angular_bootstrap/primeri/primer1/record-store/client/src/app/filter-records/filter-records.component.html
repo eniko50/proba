@@ -1,0 +1,18 @@
+<div>
+	<form class="form-inline">
+		<div class="form-group">
+			<label for="input-price-lowest">from: </label>
+			<input class="form-control" name="input-price-lowest" id="input-price-lowest" [(ngModel)]="priceLimits.lowest"/>	
+		</div>
+
+		<div class="form-group">
+			<label for="input-price-highest">to: </label>
+			<input class="form-control" name="input-price-highest" id="input-price-highest" [(ngModel)]="priceLimits.highest"/>	
+		</div>
+
+		<div class="btn-group">
+			<button class="btn btn-primary" (click)="filterRecords()">filter</button>
+			<button class="btn btn-warning" (click)="resetFilter()">reset</button>
+		</div>
+	</form>
+</div>

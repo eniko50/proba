@@ -1,0 +1,45 @@
+<div class="col-sm-12">
+
+
+
+    <div>
+        <form class="form-inline" (ngSubmit) = "setProjectName()">
+              
+           <div class="form-group">
+              <label for="projectName">Name</label>
+              <input class="form-control" name="projectName" id="projectName" [(ngModel)]="projectName"/>	
+           </div>
+                <button class="btn btn-secondary" type = "submit">filter</button>
+                <button class="btn btn-secondary" (click)="resetFilter()">Clear</button>
+              </form>        
+             
+  </div>
+              
+     <div class="row" *ngIf="page">
+          <table class="table">
+            <thead>
+              <tr>
+                
+                <th>Name</th>
+                <th>Description</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let project of page.content; let i = index">
+               
+                <th>{{ project.name }}</th>
+                <th>{{ project.description }}</th>
+               
+                
+                <button type="button" class="btn btn-primary" [routerLink]="['/details', project.id]">Details</button>
+              </tr>
+            </tbody>
+          </table>
+        
+          <button [disabled]="page.first" (click)="previousPage()">previous page</button>
+          <button [disabled]="page.last" (click)="nextPage()">next page</button>
+        </div> 
+        
+        
+        </div>

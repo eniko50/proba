@@ -1,0 +1,7 @@
+1,Web programiranje,6
+2,Testiranje softvera,6
+3,Algebra,8
+4,Algoritmi i strukture podataka,6
+5,Objektno orjentisano programiranje,8
+6,Klijentske tehnologije,6
+7,Sistemi bazirani na znanju,8

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery-3.2.1.js"></script>
+    <script src="main.js"></script>
+    <title>Bookstore</title>
+</head>
+<body>
+
+<table>
+    <tr>
+        <button id="show-all">Prikazi sve</button>
+    </tr>
+
+    <tr>
+        <td><input type="text" id="book-name"></td>
+        <td><button id="show-by-name">Prikazi za naslov</button></td>
+    </tr>
+
+    <tr>
+        <td><input type="text" id="author-name"></td>
+        <td><button id="show-author">Prikazi za autora</button></td>
+    </tr>
+
+    <tr>
+        <td>Cena od:</td>
+        <td><input type="number" id="cost-from"/></td>
+        <td>do:</td>
+        <td><input type="number" id="cost-to"/></td>
+        <td><button id="show-by-price">Prikazi po ceni</button></td>
+    </tr>
+</table>
+
+<hr>
+
+<table border="1" id="table">
+    
+</table>
+
+<hr>
+
+<table>
+    <tr>
+        <td>Naziv</td>
+        <td><input type="text" id="new-book-name"></td>
+    </tr>
+    <tr>
+        <td>Autor</td>
+        <td><input type="text" id="new-book-author"></td>
+    </tr>
+    <tr>
+        <td>Godina izdanja</td>
+        <td><input type="text" id="new-book-year"></td>
+    </tr>
+    <tr>
+        <td>Cena</td>
+        <td><input type="number" id="new-book-cost"></td>
+    </tr>
+</table>
+
+<button id="create">Dodaj</button>
+
+</body>
+</html>

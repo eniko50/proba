@@ -1,0 +1,7 @@
+1,Webp rogramiranje,6,false
+2,Matematicka analiza,8,false
+3,Algebra,8,false
+4,Algoritmi i strukture podataka,6,false
+5,Objektno orjentisano programiranje,8,false
+6,Klijentske tehnologije,6,false
+7,Sistemi bazirani na znanju,8,false

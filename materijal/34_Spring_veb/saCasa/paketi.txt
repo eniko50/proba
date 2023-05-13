@@ -1,0 +1,16 @@
+vp
+    spring
+        mojnoviprojekat
+            sacasa
+                App.java - main
+                service
+                    
+                    CityService
+                    ..
+                data
+                    CityRepository
+                    ..
+                controller
+                    CityController
+                    ..
+                model

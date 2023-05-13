@@ -1,0 +1,15 @@
+<div>
+  <p>Add student:</p>
+  <form (ngSubmit)="addStudentEvent()">
+    <label for="input-index">Index</label>
+    <input type="text" name="input-index" [(ngModel)]="currentStudent.index">
+    <br>
+    <label for="input-first-name">First name</label>
+    <input type="text" name="input-first-name" [(ngModel)]="currentStudent.firstName">
+    <br>
+    <label for="input-last-name">Last name</label>
+    <input type="text" name="input-last-name" [(ngModel)]="currentStudent.lastName">
+    <br>
+    <input type="submit" value="save">
+  </form>
+</div>

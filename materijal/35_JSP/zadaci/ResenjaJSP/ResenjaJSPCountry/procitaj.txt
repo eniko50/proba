@@ -1,0 +1,6 @@
+Primer se pokrece preko mavena:
+mvn spring-boot:run
+
+Iz Eclipse-a, ide se desni klik na pom.xml, pa Run As->Maven build...
+U polje goals se upise 
+spring-boot:run

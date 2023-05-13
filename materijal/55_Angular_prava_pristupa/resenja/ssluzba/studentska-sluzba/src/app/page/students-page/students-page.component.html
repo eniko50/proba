@@ -1,0 +1,19 @@
+<h1>Studenti</h1>
+
+<span>
+    <app-search (setSearchTerm)="search($event)"></app-search>
+    <br/>
+    <app-filter 
+        (filteredByAvgGrade)="filterByAvgGrade($event)"
+        (filteredByMaxGrade)="filterByMaxGrade()"
+        (filteredByNextYearCondition)="filterByNextYearCondition()"
+        (sortedByAvgGrade)="sortByGrade($event)"
+        (resetFilter)="loadData()">
+    </app-filter>
+</span>
+<br/>
+<app-student-list [students]="students" [isAdministrator]="isAdministrator" (studentDeleted)="deleteStudent($event)" (markStudentForEditing)="setActiveStudent($event)"></app-student-list>
+<br/>
+<app-add-student-form *ngIf="isAdministrator" (studentAdded)="addStudent($event)"></app-add-student-form>
+<br/>
+<app-edit-student-form *ngIf="isAdministrator" (studentEdited)="editStudent($event)" [studentToEdit]="activeStudent"></app-edit-student-form>

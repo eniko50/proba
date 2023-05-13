@@ -1,0 +1,24 @@
+h1 {
+  font-weight: normal;
+  background-color: #f48642;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  font-family: Arial;
+}
+
+.celija {
+  border: 1px solid #f48642;
+}
+
+.celija img {
+  width: 100%;
+}
+
+.okvir-celije {
+  border: 1px solid #f48642;
+  width: 29%;
+  padding: 7px;
+  margin: 7px;
+  float: left;
+}

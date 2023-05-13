@@ -1,0 +1,28 @@
+<p>Students:</p>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Average</th>
+      <th>Points</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let student of students">
+      <td>{{student.index}}</td>
+      <td>{{student.firstName}}</td>
+      <td>{{student.lastName}}</td>
+      <td>{{student.averageMark()}}</td>
+      <td>{{student.pointTotal()}}</td>
+      <td *ngIf="hasControls">
+        <button (click)="deleteStudent(student.index)">Delete</button>
+      </td>
+          <td *ngIf="hasControls">
+        <button (click)="showStudent(student)">Show</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,54 @@
+html, body {
+    font-family: Verdana,sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+.cs-teal{
+	background-color: rgb(165, 0, 0);
+	color: rgb(255, 255, 255);
+}
+.cs-teal a{
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+}
+.cs-xxlarge{
+    font-size: 250%;	
+}
+.cs-right{
+    float: right;	
+}
+h1, h2, h3, h4, h5, h6, .cs-teal a {
+    font-family: Verdana,sans-serif;
+}
+h1 {
+    font-size: xx-large;
+    padding: 1%;
+}
+.cs-twothird{
+	width: 66%;
+	float: left;
+}
+.cs-twothird img{
+	width: 100%;
+}
+.cs-third{
+	float:right;
+	width: 33%;
+	margin-left: 1%;
+}
+.cs-row-padding{
+	padding:10px;
+}
+.cs-table{
+    border-collapse: collapse;
+    width: 100%;
+}
+.cs-table td, .cs-table th{
+    padding: 8px 8px;
+    display: table-cell;
+    text-align: left;
+    vertical-align: top;
+}
+.cs-table tbody tr:nth-child(odd) {
+   background-color: #ccc;
+}

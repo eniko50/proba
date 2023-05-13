@@ -1,0 +1,51 @@
+<h1>
+  RecordStore
+</h1>
+
+<form (ngSubmit)="save()">
+	
+	<label for="input-title">title: </label>
+		<input name="input-title" id="input-title" [(ngModel)]="newRecord.title"/><br/>
+	
+	<label for="input-author">author: </label>
+		<input name="input-author" id="input-author" [(ngModel)]="newRecord.author"/><br/>
+	
+	<label for="input-image-url">imageUrl: </label>
+		<input name="input-image-url" id="input-image-url" [(ngModel)]="newRecord.imageUrl"/><br/>
+
+	<label for="input-price">price: </label>
+		<input name="input-price" id="input-price" [(ngModel)]="newRecord.price"/><br/>
+	
+	<input type="submit" value="save"/>
+
+</form>
+
+<br/>
+
+<div>
+	<button (click)="sort(orderTypes.asc)">sort by price asc</button>
+	<button (click)="sort(orderTypes.desc)">sort by price desc</button>
+</div>
+
+<br/>
+
+<div>
+	<label for="input-price-lowest">from: </label>
+		<input name="input-price-lowest" id="input-price-lowest" [(ngModel)]="priceFilter.lowest"/><br/>	
+
+	<label for="input-price-heighest">to: </label>
+		<input name="input-price-heighest" id="input-price-heighest" [(ngModel)]="priceFilter.heighest"/><br/>	
+
+	<button (click)="filterRecords()">filter</button>
+	<button (click)="resetFilter()">reset</button>
+</div>
+
+<br/>
+<div>
+	<h1>Records</h1>
+	<ul>
+		<li *ngFor="let r of records; let i = index">
+			<app-record [record]="r" [index]="i" (deleteRecordIndex)="delete($event)"></app-record>
+		</li>
+	</ul>
+</div>

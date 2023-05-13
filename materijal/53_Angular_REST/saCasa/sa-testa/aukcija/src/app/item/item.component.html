@@ -1,0 +1,6 @@
+<div>
+  <h1>{{item.name}}</h1>
+  <p>Buyout price: {{item.buyoutPrice}}</p>
+  <p>{{ item.sold ? 'SOLD!' : 'Available' }}</p>
+  <button (click)="deleteItem()"></button>
+</div>

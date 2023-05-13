@@ -1,0 +1,15 @@
+<div>
+  <p>Add subject:</p>
+  <form (ngSubmit)="addSubjectEvent()">
+    <label for="input-code">Code</label>
+    <input type="text" name="input-code" [(ngModel)]="subject.code">
+    <br>
+    <label for="input-name">Name</label>
+    <input type="text" name="input-name" [(ngModel)]="subject.name">
+    <br>
+    <label for="input-espb">espb</label>
+    <input type="number" name="input-espb" [(ngModel)]="subject.espb">
+    <br>
+    <input type="submit" value="save">
+  </form>
+</div>

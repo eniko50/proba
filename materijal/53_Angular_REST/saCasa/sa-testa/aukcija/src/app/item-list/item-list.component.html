@@ -1,0 +1,8 @@
+<div>
+  <h1>Auction items</h1>
+  <ul>
+    <li *ngFor="let i of items">
+      <app-item [item]="i" (deleteItemEvent)="deleteItem($event)"></app-item>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<studentska-sluzba>
+    <studenti>
+        <student id="1">
+            <ime>Marko</ime>
+            <prezime>Markovic</prezime>
+            <indeks>3229</indeks>
+        </student>
+        <student id="2">
+            <ime>Petar</ime>
+            <prezime>Petrovic</prezime>
+            <indeks>6372</indeks>
+        </student>
+    </studenti>
+
+    <predmeti>
+        <predmet id="1">
+            <naziv>Web programiranje</naziv>
+            <espb>8</espb>
+        </predmet>
+        <predmet id="2">
+            <naziv>Matematika</naziv>
+            <espb>9</espb>
+        </predmet>
+        <predmet id="3">
+            <naziv>Sociologija</naziv>
+            <espb>3</espb>
+        </predmet>
+    </predmeti>
+
+    <ispiti>
+        <ispit>
+            <id-studenta>1</id-studenta>
+            <id-predmeta>2</id-predmeta>
+            <ocena>7</ocena>
+        </ispit>
+        <ispit>
+            <id-studenta>1</id-studenta>
+            <id-predmeta>3</id-predmeta>
+            <ocena>10</ocena>
+        </ispit>
+        <ispit>
+            <id-studenta>2</id-studenta>
+            <id-predmeta>2</id-predmeta>
+            <ocena>9</ocena>
+        </ispit>
+        <ispit>
+            <id-studenta>2</id-studenta>
+            <id-predmeta>1</id-predmeta>
+            <ocena>10</ocena>
+        </ispit>
+    </ispiti>
+</studentska-sluzba>

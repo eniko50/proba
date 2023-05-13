@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="studentska-sluzba">
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="studenti" />
+				<xs:element ref="predmeti" />
+				<xs:element ref="ispiti" />
+			</xs:all>
+		</xs:complexType>		
+	</xs:element>
+
+	<xs:element name="studenti">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="student"/>
+			</xs:sequence>
+		</xs:complexType>		
+	</xs:element>
+
+	<xs:element name="predmeti">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="predmet"/>
+			</xs:sequence>
+		</xs:complexType>		
+	</xs:element>
+
+	<xs:element name="ispiti">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="ispit"/>
+			</xs:sequence>
+		</xs:complexType>		
+	</xs:element>
+
+	<xs:element name="student">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="ime" type="xs:string"/>
+				<xs:element name="prezime" type="xs:string" />
+				<xs:element name="indeks" type="xs:string"/>
+			</xs:all>
+			<xs:attribute name="id" use="required" type="xs:integer" />
+		</xs:complexType>
+		
+	</xs:element>
+	<xs:element name="predmet">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="naziv" type="xs:string"/>
+				<xs:element name="espb" type="xs:integer" />
+			</xs:all>
+			<xs:attribute name="id" use="required" type="xs:integer" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="ispit">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="id-studenta" type="xs:integer" />
+				<xs:element name="id-predmeta" type="xs:integer" />
+				<xs:element name="ocena" type="xs:integer" />
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

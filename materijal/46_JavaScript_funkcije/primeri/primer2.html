@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title>primer 1</title>
+</head>
+<body>
+	<h1>JavaScript</h1>
+	<script>
+		var Brojac = function (startnaVrednost) {
+			this.vrednost = startnaVrednost;
+		};
+		Brojac.prototype.uvecaj = function(){
+			this.vrednost += 1;
+		};
+
+		var b1 = new Brojac(5);
+		var b2 = new Brojac(10);
+		b1.uvecaj();
+		b2.uvecaj();
+		console.log('b1.vrednost: '+b1.vrednost);//6
+		console.log('b2.vrednost: '+b2.vrednost);//11
+</script>
+</body>
+</html>

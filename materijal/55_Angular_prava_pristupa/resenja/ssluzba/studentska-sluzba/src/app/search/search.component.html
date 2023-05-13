@@ -1,0 +1,10 @@
+<div>
+  <span>
+    <form (ngSubmit)="search()">
+      <label for="search-by-card-number">Broj indeksa:</label>
+      <input name="search-by-card-number" type="text" [(ngModel)]="searchTerm" />
+      <input type="submit" value="Traži" />
+    </form>
+    <button type="button" (click)="reset()">Poništi pretragu</button>
+  </span>
+</div>

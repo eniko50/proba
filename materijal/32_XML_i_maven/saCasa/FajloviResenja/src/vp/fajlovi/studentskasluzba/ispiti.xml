@@ -1,0 +1,22 @@
+<ispiti>
+	<ispit>
+		<id-studenta>1</id-studenta>
+		<id-predmeta>2</id-predmeta>
+		<ocena>7</ocena>
+	</ispit>
+	<ispit>
+		<id-studenta>1</id-studenta>
+		<id-predmeta>3</id-predmeta>
+		<ocena>10</ocena>
+	</ispit>
+	<ispit>
+		<id-studenta>2</id-studenta>
+		<id-predmeta>2</id-predmeta>
+		<ocena>9</ocena>
+	</ispit>
+	<ispit>
+		<id-studenta>2</id-studenta>
+		<id-predmeta>1</id-predmeta>
+		<ocena>10</ocena>
+	</ispit>
+</ispiti>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<automobili>
+    <auto boja="crvena" godinaProizvodnje="2015">
+        <tocak pozicija="prednji-levi">
+            <proizvodjac>Continental</proizvodjac>
+            <precnik>15</precnik>
+        </tocak>
+        <tocak pozicija="prednji-desni">
+            <proizvodjac>Continental</proizvodjac>
+            <precnik>15</precnik>
+        </tocak>
+        <tocak pozicija="zadnji-levi">
+            <proizvodjac>Bireli</proizvodjac>
+            <precnik>20</precnik>
+        </tocak>
+        <tocak pozicija="zadnji-desni">
+            <proizvodjac>Bireli</proizvodjac>
+            <precnik>20</precnik>
+        </tocak>
+    </auto>
+</automobili>

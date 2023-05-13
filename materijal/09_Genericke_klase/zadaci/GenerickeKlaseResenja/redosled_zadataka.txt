@@ -1,0 +1,7 @@
+01 - vp.generickeklase.studenti
+
+02 - vp.generickeklase.predmeti
+
+03 - vp.generickeklase.ispiti
+
+04 - vp.generickeklase.ocenjivanje

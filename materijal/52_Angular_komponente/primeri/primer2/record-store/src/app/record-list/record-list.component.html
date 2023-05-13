@@ -1,0 +1,8 @@
+<div>
+	<h1>Records</h1>
+	<ul>
+		<li *ngFor="let r of records; let i = index">
+			<app-record [record]="r" [index]="i" (deleteRecordIndex)="delete($event)"></app-record>
+		</li>
+	</ul>
+</div>

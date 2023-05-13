@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="text" name="firstName" value="Petar">
+	<br/><br/>
+	<input type="password" name="pwd">
+
+	<br/><br/>
+
+	<table>
+		<tr>
+			<td>Muški</td>
+			<td><input type="radio" name="gender" value="male" checked="checked"></td>
+		</tr>
+		<tr>
+			<td>Ženski</td>
+			<td><input type="radio" name="gender" value="female"></td>
+		</tr>
+	</table>
+
+	<br/><br/>
+	Saglasan
+	<input type="checkbox" name="agree" value="Yes">
+
+	<br/><br/>
+	<select name="city" >
+		<option value="BG">Beograd</option>
+		<option value="NS" selected>Novi Sad</option>
+		<option value="NI">Niš</option>
+	</select>
+
+	<br/> <br/>
+
+	<form action="/add" method="post">
+		Naziv <br/>
+		<input type="text" name="name">  <br/>
+		Broj stanovnika  <br />
+		<input type="text" name="population"> </br> <br/>
+
+		<input type="submit" value="Dodaj">
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+<div>
+  <form (ngSubmit) = "addStudent()">
+    <label for="student-number">Indeks</label>
+    <input name="student-number" type="text" [(ngModel)] = "studentToAdd.cardNumber" placeholder="Indeks"/>
+    <br/>
+    <label for="student-firstname">Ime:</label>
+    <input name="student-firstname" type="text" [(ngModel)] = "studentToAdd.firstName" placeholder="Ime"/>
+    <br/>
+    <label for="student-lastname">Prezime:</label>
+    <input name="student-lastname" type="text" [(ngModel)] = "studentToAdd.lastName" placeholder="Prezime"/>
+    <br/>
+    <input type="submit" value="Dodaj"/>
+  </form>
+</div>

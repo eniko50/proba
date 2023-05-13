@@ -1,0 +1,53 @@
+{
+	"variables": [],
+	"info": {
+		"name": "ResenjaJpaStudenti",
+		"_postman_id": "aa96c90e-6ed3-f5e7-4f88-b6d8397c55fd",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get courses sorted by exam count",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8080/api/courses?sortByExamCount=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"courses"
+					],
+					"query": [
+						{
+							"key": "sortByExamCount",
+							"value": "true",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get student average grade",
+			"request": {
+				"url": "http://localhost:8080/api/students/1/exams/avg",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

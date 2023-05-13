@@ -1,0 +1,20 @@
+<form (ngSubmit)="addRecord()">
+	
+	<label for="input-title">title: </label>
+		<input name="input-title" id="input-title" [(ngModel)]="newRecord.title"/><br/>
+	
+	<label for="input-author">author: </label>
+		<select name="input-author" id="input-author"  [(ngModel)]="newRecord.author">
+		  <option *ngFor="let a of authors" [ngValue]="a">{{a.name}}</option>
+		</select>
+		<!-- <input name="input-author" id="input-author" [(ngModel)]="newRecord.author.id"/><br/> -->
+	
+	<label for="input-image-url">imageUrl: </label>
+		<input name="input-image-url" id="input-image-url" [(ngModel)]="newRecord.imageUrl"/><br/>
+
+	<label for="input-price">price: </label>
+		<input name="input-price" id="input-price" [(ngModel)]="newRecord.price"/><br/>
+	
+	<input type="submit" value="save"/>
+
+</form>

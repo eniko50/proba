@@ -1,0 +1,31 @@
+﻿
+Smislite kako bi izgledao model jedne turističke agencije. Ta agencija treba da organizuje izlete, 
+svaki od izleta se sastoji od naziva i destinacija koje se posećuju tokom tog izleta. 
+Jedna destinacija naravno da može da se javlja u više izleta.
+pr. Super duper ski manija ludnica -> Kopaonik, Zlatibor, Tara
+Izleti imaju svoje ture (jedan odlazak grupe ljudi na taj izlet). Koja je odredjena datumom kada se išlo.
+pr. Super duper ski manija od 16.02.2019. do 23.02.2019.
+Za turu je jako bitno evidentirati vodiča, kao i ljude koji su se prijavili za tu turu.
+pr. Super duper ski maniju od 16.02.2019. do 23.02.2019. vodi Milisav, 
+a prijavili su se Milica, Ana, Djordje, Boško, Dragan.
+Što vam ostavlja 4 bitna entiteta u sistemu:
+
+Izlet
+Destinacija
+Tura
+Osoba
+
+dodavanje izleta
+dodavanje tura
+dodavanje turista u turu
+
+menjanje izleta
+menjanje tura
+
+pretraga tura, izleta, destinacija
+
+brisanje destinacija, tura, izleta
+
+trazenje tura od do
+trazenje izleta na kojima je bila jedna odredjena osoba
+osobu koja je bila na najvise izleta

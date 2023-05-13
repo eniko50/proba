@@ -1,0 +1,62 @@
+<h1>
+        RecordStore
+    </h1>
+    
+    <form (ngSubmit)="save()">
+    
+        <label for="input-title">title: </label>
+        <input name="input-title" id="input-title" [(ngModel)]="newRecord.title" /><br />
+    
+        <label for="input-author">author: </label>
+        <input name="input-author" id="input-author" [(ngModel)]="newRecord.author" /><br />
+    
+        <label for="input-image-url">imageUrl: </label>
+        <input name="input-image-url" id="input-image-url" [(ngModel)]="newRecord.imageUrl" /><br />
+    
+        <label for="input-price">price:</label>
+        <input type="number" name="input-price" id="input-price" [(ngModel)]="newRecord.price" /><br />
+    
+        <input type="submit" value="save" />
+    
+    </form>
+    <hr />
+    
+    <form (ngSubmit)="filter()">
+        <label for="query-title">title: </label>
+        <input name="query-title" id="query-title" [(ngModel)]="query.title" />
+        <br />
+        <label for="query-author">author: </label>
+        <input name="query-author" id="query-author" [(ngModel)]="query.author" />
+        <br />
+    
+        <label for="query-price">use price filter</label>
+        <input type="checkbox" name="query-price" id="query-price"
+                [(ngModel)]="query.applyPriceFilter"/>
+        <br/>
+        <label for="query-low-price">low price: </label>
+        <input type="number" name="query-low-price" id="query-low-price" [(ngModel)]="query.lowPrice" [disabled]="!query.applyPriceFilter"/>
+        <label for="query-high-price">high price: </label>
+        <input type="number" name="query-high-price" id="query-high-price" [(ngModel)]="query.highPrice" [disabled]="!query.applyPriceFilter"/>
+        <br/>
+        
+        <input type="submit" value="search" />
+    </form>
+    
+    <hr />
+    <ul>
+        <li *ngFor="let record of displayRecords; let i = index">
+            <h2>{{record.title}}</h2>
+            <div>{{record.author}}</div>
+            <div>{{record.price}}</div>
+            <div><img width="100" height="100" src="{{record.imageUrl}}"></div>
+            <div *ngIf="record.styles.length!=0">
+                styles:
+                <ul>
+                    <li *ngFor="let style of record.styles">
+                        {{style}}
+                    </li>
+                </ul>
+            </div>
+            <button (click)="delete(i)">remove</button>
+        </li>
+    </ul>

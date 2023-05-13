@@ -1,0 +1,12 @@
+01 - Bankomat
+02 - BankomatBroj
+03 - PrirodniBrojevi
+04 - DeljiviBrojevi
+05 - PronalazenjeBroja
+06 - PonavljanjeBroja
+07 - EvidencijaStudenata
+08 - Student
+09 - Predmeti
+10 - PovezivanjePredmeta
+11 - Temperatura
+12 - BankomatUopstavanje

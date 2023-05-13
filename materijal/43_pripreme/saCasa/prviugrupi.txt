@@ -1,0 +1,13 @@
+groups.stream()
+    .map(group -> {
+        max = group.teams.stream()
+            .mapToInt(Team::getPoints) // IntStream
+            .max()
+            .orElse(0)
+        
+        teams = group.teams.stream
+            .filter(team -> team.points == max)
+            .collect(Collectors.toList())
+
+        return teams.random;
+    })

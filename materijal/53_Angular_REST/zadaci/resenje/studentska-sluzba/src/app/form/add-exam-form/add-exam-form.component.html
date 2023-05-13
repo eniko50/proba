@@ -1,0 +1,13 @@
+<div *ngIf="isDataFetched">
+  <form (ngSubmit)="addExam()">
+    <label for="exam-subject">Predmet:</label>
+    <select class="form-control" id="exam-subject" required [(ngModel)]="examToAdd.course.id" name="exam-subject">
+      <option *ngFor="let subject of subjects;" [value]="subject.id">{{subject.name}}</option>
+    </select>
+    <br/>
+    <label for="exam-grade">Ocena:</label>
+    <input name="exam-grade" type="text" [(ngModel)]="examToAdd.grade" />
+    <br/>
+    <input type="submit" value="Dodaj" />
+  </form>
+</div>

@@ -1,0 +1,11 @@
+<div>
+	<label for="input-price-lowest">from: </label>
+		<input name="input-price-lowest" id="input-price-lowest" [(ngModel)]="priceLimits.lowest"/><br/>	
+
+	<label for="input-price-heighest">to: </label>
+		<input name="input-price-heighest" id="input-price-heighest" [(ngModel)]="priceLimits.heighest"/><br/>	
+
+	<button (click)="filterRecords()">filter</button>
+	<button (click)="resetFilter()">reset</button>
+</div>
+

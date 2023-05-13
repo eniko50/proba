@@ -1,0 +1,6 @@
+01 - Akcija
+02 - PrestupnaGodina
+03 - Operacija
+04 - Student
+05 - Meni
+06 - TipStudija

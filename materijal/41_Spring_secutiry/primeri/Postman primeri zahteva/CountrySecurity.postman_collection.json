@@ -1,0 +1,118 @@
+{
+	"variables": [],
+	"info": {
+		"name": "CountrySecurity",
+		"_postman_id": "1cb0e3ab-93d5-05e5-266d-43589c0f9c73",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login as admin",
+			"request": {
+				"url": "http://localhost:8080/api/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"admin\",\n\t\"password\": \"12345\"\n}"
+				},
+				"description": "Login as admin"
+			},
+			"response": []
+		},
+		{
+			"name": "Login as standard user",
+			"request": {
+				"url": "http://localhost:8080/api/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"petar\",\n\t\"password\": \"abcdef\"\n}"
+				},
+				"description": "Login as admin"
+			},
+			"response": []
+		},
+		{
+			"name": "Get countries with authorization token",
+			"request": {
+				"url": "http://localhost:8080/api/countries",
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Auth-Token",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImNyZWF0ZWQiOjE1MDExNTU5MzAxMzQsImV4cCI6MTUwMTE3MzkzMH0.Y8FXqyQreLQ4hFwFfH4PrFagfC3iaGdfXYF-4UJby0H7pIytPPMBYSELKnA-WRdfPqo9KSnRRfm5YADkA75fZg",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add country with authorization token",
+			"request": {
+				"url": "http://localhost:8080/api/countries",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "X-Auth-Token",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImNyZWF0ZWQiOjE1MDExNTU5MzAxMzQsImV4cCI6MTUwMTE3MzkzMH0.Y8FXqyQreLQ4hFwFfH4PrFagfC3iaGdfXYF-4UJby0H7pIytPPMBYSELKnA-WRdfPqo9KSnRRfm5YADkA75fZg",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Germany\",\n\t\"population\":81410000\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Register user",
+			"request": {
+				"url": "http://localhost:8080/api/register",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "X-Auth-Token",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJpdmFuIiwiY3JlYXRlZCI6MTUwNDI2MDk5OTE2NywiZXhwIjoxNTA0Mjc4OTk5fQ.7u2maciTfq_i1jsl8FVqW84ls54bwg7RO1nXb-ngvieo0c5b4tGrSR97Yo7zx8IAYKRN7ALCUO2d5zCf2FlKMA",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\": \"Nenad\",\n\t\"lastName\": \"Nenadic\",\n\t\"username\": \"nenad\",\n\t\"password\": \"nenad123\",\n\t\"roles\": [\"ROLE_ADMIN\", \"ROLE_USER\"]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

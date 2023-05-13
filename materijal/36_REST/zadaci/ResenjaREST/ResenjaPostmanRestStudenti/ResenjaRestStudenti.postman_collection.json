@@ -1,0 +1,252 @@
+{
+	"variables": [],
+	"info": {
+		"name": "ResenjaRestStudenti",
+		"_postman_id": "3f775597-587d-5755-06bc-346221ff7e6d",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get students",
+			"request": {
+				"url": "http://localhost:8080/api/students",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get exams",
+			"request": {
+				"url": "http://localhost:8080/api/exams",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get courses",
+			"request": {
+				"url": "http://localhost:8080/api/courses",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get student",
+			"request": {
+				"url": "http://localhost:8080/api/students/3",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get course",
+			"request": {
+				"url": "http://localhost:8080/api/courses/3",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get exam",
+			"request": {
+				"url": "http://localhost:8080/api/exams/3",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add student",
+			"request": {
+				"url": "http://localhost:8080/api/students",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"cardNumber\": \"e191\",\n\t\"firstName\": \"Nemanja\",\n\t\"lastName\": \"Ivkovic\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add exam",
+			"request": {
+				"url": "http://localhost:8080/api/exams",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"student\": {\n\t\t\"id\": 2\n\t},\n\t\"course\": {\n\t\t\"id\": 5\n\t},\n\t\"grade\": 9\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add course",
+			"request": {
+				"url": "http://localhost:8080/api/courses",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Operativni sistemi\",\n\t\"espb\": 4\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Modify student",
+			"request": {
+				"url": "http://localhost:8080/api/students/2",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"cardNumber\": \"e352\",\n\t\"firstName\": \"Ana\",\n\t\"lastName\": \"Krunic\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Modify course",
+			"request": {
+				"url": "http://localhost:8080/api/courses/2",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Testiranje softvera\",\n\t\"espb\": 6\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete student",
+			"request": {
+				"url": "http://localhost:8080/api/students/6",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete course",
+			"request": {
+				"url": "http://localhost:8080/api/courses/8",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete exam",
+			"request": {
+				"url": "http://localhost:8080/api/exams/8",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Find student by card number",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8080/api/students?cardNumber=e20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"students"
+					],
+					"query": [
+						{
+							"key": "cardNumber",
+							"value": "e20",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Find student exams",
+			"request": {
+				"url": "http://localhost:8080/api/students/1/exams",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

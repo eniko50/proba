@@ -1,0 +1,12 @@
+<studenti>
+	<student id="1">
+		<ime>Marko</ime>
+		<prezime>Markovic</prezime>
+		<indeks>3229</indeks>
+	</student>
+	<student id="2">
+		<ime>Petar</ime>
+		<prezime>Petrovic</prezime>
+		<indeks>6372</indeks>
+	</student>
+</studenti>

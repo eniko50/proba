@@ -1,0 +1,7 @@
+Thinking in Java Edition by Bruce Eckel
+The Algorithm Design Manual by Steven S Skiena
+Design Patterns: Elements of Reusable Object-Oriented Software by Erich Gamma,‎ Richard Helm,‎ Ralph Johnson,‎ John Vlissides
+An Introduction to Database Systems by C.J. Date
+Spring Boot in Action by Craig Walls
+JavaScript: The Good Parts by Douglas Crockford
+ng-book: The Complete Guide to Angular 4 by Nathan Murray (Author),‎ Ari Lerner (Author),‎ Felipe Coury (Author),‎ Carlos Taborda

@@ -1,0 +1,17 @@
+XPath izrazi mogu biti izvršeni u online alatu na adresi https://www.freeformatter.com/xpath-tester.html
+
+1. Selektovanje svih studenata
+/studentska-sluzba/studenti/student
+
+2. Svi ispiti studenta sa identifikatorom 2
+//ispit[id-studenta=2]
+
+3. Prosecna ocena studenta sa identifikatorom 1. Dobija se kao suma svih njegovih ocena, podeljena sa brojem ispita:
+
+sum(//ispit[id-studenta=1]/ocena) div count(//ispit[id-studenta=1])
+
+4. Pronalaženje studenata koji su na ispitu iz Matematike dobili ocenu veću od 8:
+
+Preuzima se čvor student čiji atribut id, ima istu vrednost kao čvor id-studenta za ispit čija je ocena veća od 8 i čiji je id predmeta jednak atributu id od predmeta čiji je naziv Matematika:
+
+//student[@id=(//ispit[ocena > 8 and id-predmeta=(//predmet[naziv='Matematika']/@id)]/id-studenta)]

@@ -1,0 +1,16 @@
+<h1>
+  RecordStore
+</h1>
+
+<app-add-record (newRecordAdded)="save($event)"></app-add-record>
+
+<br/>
+
+<app-sort (sortEvent)="sort($event)"></app-sort>
+<br/>
+
+<app-filter (updateFilter)="filter($event)"></app-filter>
+
+
+<br/>
+<app-record-list [records]="records" (deleteRecordIndex)="delete($event)"></app-record-list>

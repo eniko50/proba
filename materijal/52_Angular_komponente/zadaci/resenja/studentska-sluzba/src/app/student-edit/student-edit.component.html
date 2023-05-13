@@ -1,0 +1,52 @@
+<div *ngIf="student">
+  <p>Edit student:</p>
+  <form (ngSubmit)="save()">
+    <br>
+    Index {{student.index}}
+    <br>
+    <label for="input-first-name">First name</label>
+    <input type="text" name="input-first-name" [(ngModel)]="student.firstName">
+    <br>
+    <label for="input-last-name">Last name</label>
+    <input type="text" name="input-last-name" [(ngModel)]="student.lastName">
+    <input type="submit" value="save">
+  </form>
+
+  <p>Add exam:</p>
+  <form (ngSubmit)="addExam()">
+    <label for="input-code">Subject code:</label>
+    <select [(ngModel)]="newExam.subject" name="input-code">
+      <option *ngFor="let subject of subjects" [ngValue]="subject">{{subject.name}}</option>
+    </select>
+    <br>
+    <label for="input-mark">Mark:</label>
+    <input type="number" name="input-mark" [(ngModel)]="newExam.mark">
+    <br>
+    <input type="submit" value="save">
+  </form>
+
+  <p>Exams:</p>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Subject</th>
+        <th>Mark</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let exam of student.passedExams">
+        <td>{{exam.subject.name}}</td>
+        <td>{{exam.mark}}</td>
+        <td>
+          <button (click)="deleteExamClick(exam)">Delete</button>
+        </td>
+        <td>
+          <button (click)="showExamClick(exam)">Show</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <app-edit-exam [exam]="selectedExam" (saveExam)="updateExamEvent($event)"></app-edit-exam>
+  
+</div>

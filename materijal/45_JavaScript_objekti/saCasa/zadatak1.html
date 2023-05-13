@@ -1,0 +1,83 @@
+<html>
+
+<head>
+    <title>Zadatak 1</title>
+</head>
+
+<body>
+    <h1>Zadatak 1</h1>
+    <script>
+        var Predmet = function (naziv, espb, sifra) {
+            this.naziv = naziv;
+            this.espb = espb;
+            this.sifra = sifra;
+        }
+
+        var Ispit = function (ocena, predmet) {
+            this.ocena = ocena;
+            this.predmet = predmet;
+        }
+
+        var Student = function (ime, prezime, godinaStudija,
+            brojIndeksa, ispiti) {
+            this.ime = ime;
+            this.prezime = prezime;
+            this.godinaStudija = godinaStudija;
+            this.brojIndeksa = brojIndeksa;
+            this.ispiti = ispiti;
+
+            // this.predstaviSe = function() {
+            //     return `${this.ime} ${this.prezime}`;
+            // }
+        }
+
+        // Student.prototype.predstaviSe = function() {
+        //     return `${this.ime} ${this.prezime}`;
+        // }
+
+        var matematika = new Predmet('Matematika', 9, 'mat');
+        console.log(matematika);
+        var ispit = new Ispit(8, matematika);
+        console.log(ispit);
+        var pera = new Student('Pera', 'Peric', 2, '123', [ispit]);
+        console.log(pera);
+
+        var StudentskaSluzba = function() {
+            this.studenti = [];
+            this.predmeti = [];
+        }
+
+        StudentskaSluzba.prototype.dodajStudenta = function(student) {
+            this.studenti.push(student);
+        }
+
+        StudentskaSluzba.prototype.dodajPredmet = function(predmet) {
+            this.predmeti.push(predmet);
+        }
+
+        StudentskaSluzba.prototype.indexStudenta = function(brojIndeksa) {
+            for (var i in this.studenti) { // for in ide po indeksima niza!!!
+                var student = this.studenti[i];
+                if (student.brojIndeksa === brojIndeksa) {
+                    return i;
+                }
+            }
+
+            return -1;
+        }
+
+        StudentskaSluzba.prototype.dodajIspit = function(brojIndeksa, ispit) {
+            var index = this.indexStudenta(brojIndeksa);
+            if (index === -1) {
+                return;
+            }
+
+            var student = this.studenti[index];
+            student.ispiti.push(ispit);
+        }
+
+        var studentskaSluzba = new StudentskaSluzba();
+        
+    </script>
+</body>
+</html>

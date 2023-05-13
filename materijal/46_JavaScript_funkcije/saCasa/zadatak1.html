@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>Zadatak 1</title>
+</head>
+<body>
+	<h1>JavaScript Funkcije</h1>
+	<script>
+        var findIndex = function (niz, predikat) {
+            for (var i = 0; i < niz.length; i++) {
+                if (predikat(niz[i])) {
+                    return i;  
+                }
+            }
+
+            return -1;
+        }
+
+        // niz = [[k1, v1], [k2, v2], ...]
+        var fromPairs = function(niz) {
+            var objekat = {};
+            for (var par of niz) { // par = [k*, v*]
+                var key = par[0];
+                var value = par[1];
+
+                objekat[key] = value;
+            }
+
+            return objekat;
+        }
+    
+	</script>
+</body>
+</html>

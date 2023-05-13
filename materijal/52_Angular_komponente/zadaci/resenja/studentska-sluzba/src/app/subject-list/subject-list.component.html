@@ -1,0 +1,24 @@
+<p>Subjects:</p>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Name</th>
+      <th>espb</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let subject of subjects">
+      <td>{{subject.code}}</td>
+      <td>{{subject.name}}</td>
+      <td>{{subject.espb}}</td>
+      <td>
+        <button (click)="deleteSubject(subject.code)">Delete</button>
+      </td>
+      <td>
+        <button (click)="showSubject(subject)">Show</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

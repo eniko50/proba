@@ -1,0 +1,15 @@
+<div>
+	<h1>Records</h1>
+	<table class="table table-bordered table-striped">
+		<thead>
+			<tr>
+				<th>Title</th><th>Author</th><th>Price</th><th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr app-record *ngFor="let record of records; let i = index" [record]="record" [index]="i" (deleteRecordIndex)="delete($event)">
+				<!-- <app-record [record]="record" [index]="i" (deleteRecordIndex)="delete($event)"></app-record> -->
+			</tr>
+		</tbody>
+	</table>
+</div>

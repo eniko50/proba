@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title>primer 2</title>
+	<script type="text/javascript">
+	var osoba = function(spec) {    
+		var that = {};
+		that.predstaviSe = function(){ 
+			return "Ja se zovem " + 
+			spec.ime + " " + 
+			spec.prezime; 
+		};    
+		return that;
+	}
+	var markoMarkovic = osoba({    
+		ime: "Marko",    
+		prezime: "Markovic"  
+	});
+	console.log(markoMarkovic.predstaviSe())
+	var student = function(spec) {
+		var that = osoba(spec); //konstruktor pretka
+		var studira = true; // privatni atribut, zbog closure je vidljiv samo u funkciji
+		that.smer = spec.smer;// javni atribut that objekta koji 
+			    //ce biti vracen iz funkcije
+		that.super_predstaviSe = that.predstaviSe;// super 
+				//metoda koje cemo koristiti
+		student.brojac = student.hasOwnProperty('brojac')?(student.brojac + 1):1;//statičko polje
+		var brojIndeksa = student.brojac;// broj indeksa je 
+					  //autoinkrement
+		that.getIndeks = function () {//javna metoda
+			return brojIndeksa;
+		}
+		that.getCV = function() {//javna metoda
+			return "Moj broj indeksa je " + that.getIndeks() + " studiram na smeru " + spec.smer + 
+				" i imam sledece ocene " + getOcene();
+		};
+
+		that.predstaviSe = function () {
+			return  that.super_predstaviSe() + " i " + (studira?"jos uvek studiram": 
+					    "vise ne studiram");
+		};
+		var getOcene = function() { //privatne metode
+		    var i;      
+		    var retVal = "";
+		    for (i in spec.ocene) {
+		      retVal += spec.ocene[i].predmet + ":" + spec.ocene[i].ocena + " ";
+		    }
+		    return retVal; 
+		};
+		that.upisiOcenu = function(ocena) {//javna metoda koja menja privatni atribut
+			spec.ocene.push(ocena);
+		};
+
+		return that;
+	};
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

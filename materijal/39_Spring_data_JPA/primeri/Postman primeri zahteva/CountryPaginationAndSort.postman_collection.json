@@ -1,0 +1,59 @@
+{
+	"id": "cca6c3bb-f2ae-ff79-1596-9ab13840428c",
+	"name": "CountryPaginationAndSort",
+	"description": "Primeri za preuzimanje drzava sa paginacijom i sortiranjem",
+	"order": [
+		"10d0f4d6-cc10-482b-846d-7da2f673839b"
+	],
+	"folders": [],
+	"timestamp": 1500543565224,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "10d0f4d6-cc10-482b-846d-7da2f673839b",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8080/api/countries?page=0&size=2&sort=name,asc",
+			"queryParams": [
+				{
+					"key": "page",
+					"value": "0",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "size",
+					"value": "2",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "sort",
+					"value": "name,asc",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "cca6c3bb-f2ae-ff79-1596-9ab13840428c",
+			"data": null,
+			"dataMode": "params",
+			"name": "http://localhost:8080/api/countries?page=0&size=2&sort=name,asc",
+			"description": "Preuzimanje prve stranice drzava sortiranih po imenu. Stranica je velicine 2 elementa.",
+			"descriptionFormat": "html",
+			"time": 1500544843421,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}

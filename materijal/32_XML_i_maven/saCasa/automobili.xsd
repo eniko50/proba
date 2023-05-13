@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="automobili">
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element ref="auto" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="auto">
+        <xs:complexType>
+            <xs:sequence minOccurs="4" maxOccurs="4">
+                <xs:element ref="tocak" />
+            </xs:sequence>
+            <xs:attribute name="boja" type="xs:string" />
+            <xs:attribute name="godinaProizvodnje" type="xs:integer" />
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="tocak">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="proizvodjac" type="xs:string" />
+                <xs:element name="precnik" type="xs:integer" />
+            </xs:sequence>
+            <xs:attribute name="pozicija">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="prednji-levi" />
+                        <xs:enumeration value="prednji-desni" />
+                        <xs:enumeration value="zadnji-levi" />
+                        <xs:enumeration value="zadnji-desni" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

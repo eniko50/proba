@@ -1,0 +1,35 @@
+<html>
+<head>
+	<title>Studentska sluzba</title>
+	<script type="text/javascript">
+		studenti = ['Pera Peric', 'Steva Stevic', 'Marko Markovic'];
+		function prikaziStudente(){
+			ulStudenti = document.getElementById('studenti');
+			htmlStudenti = '';
+			for (var i = 0; i < studenti.length; i++) {
+				htmlStudenti += '<li>'+studenti[i]+'<button onclick="izbrisiStudenta('+i+')">izbrisi</button></li>';
+			};
+			ulStudenti.innerHTML = htmlStudenti;
+		}
+		function dodajStudenta () {
+			student = document.getElementById('student').value;
+			studenti.push(student);
+			prikaziStudente();
+		}
+		function izbrisiStudenta (i) {
+			studenti.splice(i,1);
+			prikaziStudente();
+		}
+	</script>
+</head>
+<body>
+	<h1>Studenti:</h1>
+	<input id="student"/>
+	<button onclick="dodajStudenta()">dodaj</button>
+	<ul id="studenti">
+	</ul>
+	<script type="text/javascript">
+		prikaziStudente();
+	</script>
+</body>
+</html>

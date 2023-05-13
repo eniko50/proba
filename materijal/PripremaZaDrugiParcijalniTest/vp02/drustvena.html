@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <title>Drustvena mreza</title>
+    <style>
+        body {
+            background-color: silver;
+        }
+
+        h1 {
+            color: rgb(72, 129, 165);
+        }
+
+        div#cetvrtina {
+            background-color: white;
+            text-align: center;
+            width: 20%;
+            float: left;
+            height: 100%;
+        }
+
+        img#largeimage {
+            width: 200px;
+            height: 200px;
+            margin-top: 5%;
+        }
+
+        img.velicina {
+            width: 50px;
+            height: 50px;
+        }
+
+        img#large {
+            float: right;
+            margin-top: 13%;
+
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-left: 5%;
+        }
+
+        table tr td {
+            padding: 5px;
+            color: grey;
+        }
+        #petina{
+            width: 73%;
+            float:right;
+        }
+    </style>
+    <script>
+        function loznika() {
+            var polja = document.getElementById('loz');
+            var content = '';
+            content += '<input type="password" id="pwd1"><br/>';
+            content += '<input type="password" id="pwd2"><br/>';
+            content += '<button onclick="proveri()">Potvrdi</button>';
+            polja.innerHTML = content;
+        }
+        function proveri(){
+            var rez=document.getElementById('rezultat');
+
+            var loz1=document.getElementById('pwd1').value;
+            var loz2=document.getElementById('pwd2').value;
+            var ispis ='';
+
+            if(loz1==loz2){
+                ispis += 'Loznika je uspesno promenjena';
+            }else{
+                ispis +='Neispravan unos sifre';
+            }
+            rez.innerHTML=ispis;
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div id="cetvrtina">
+        <img id="largeimage" src="User_login.png">
+        <h1>Petar Petrovic</h1>
+        <table>
+            <tr>
+                <td> <img class="velicina" src="home.png"></td>
+                <td>Overview</td>
+            </tr>
+            <tr>
+                <td><img onclick="loznika()" class="velicina" src="account.jpg"></td>
+                <td>Account settings</td>
+            </tr>
+        </table>
+    </div>
+    <div id="petina">
+        <img id="large" src="computer.png">
+
+        <div id="loz">
+        </div>
+        <div id="rezultat">
+
+        </div>
+    </div>
+
+</body>
+
+</html>

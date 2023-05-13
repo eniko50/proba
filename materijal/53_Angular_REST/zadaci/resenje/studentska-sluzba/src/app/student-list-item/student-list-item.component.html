@@ -1,0 +1,6 @@
+<div>
+  <div>{{student.firstName}} {{student.lastName}} {{student.cardNumber}} {{student.averageGrade()}}</div>
+  <button [disabled]="!isDeletingAllowed()" (click) = "deleteStudent()" title="Moguće je obrisati studenta koji nema ispite">Obriši</button>
+  <button (click) = "editStudent()">Izmeni</button>
+  <button (click)="showStudentInfo()">Info</button>
+</div>

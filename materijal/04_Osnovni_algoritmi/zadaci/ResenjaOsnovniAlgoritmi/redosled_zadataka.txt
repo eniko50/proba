@@ -1,0 +1,15 @@
+01 - SumaNiza
+02 - SrednjaVrednostNiza
+03 - NajveciElement
+04 - NajmanjiElement
+05 - Simetrija
+06 - SumaMatrice
+07 - SrednjaVrednostMatrice
+08 - MatricaUslov
+09 - MatricaKolona
+10 - MatricaZbirIndeksa
+11 - ZbirGlavnaDijagonala
+12 - NajveciGlavnaDijagonala
+13 - ZbirSporednaDijagonala
+14 - ProizvodIznad
+15 - ProizvodIspod

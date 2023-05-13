@@ -1,0 +1,4 @@
+<a [routerLink]="['/record',record.id]">{{record.title}}</a>
+<div>{{record.author.name}}</div>
+<div>{{record.price}}</div>
+<button (click)="deleteRecord(record.id)">remove</button>

@@ -1,0 +1,126 @@
+{
+	"variables": [],
+	"info": {
+		"name": "ResenjaRestGradovi",
+		"_postman_id": "299cf75b-9d97-7853-0c17-f6a408dd0ab1",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get places",
+			"request": {
+				"url": "http://localhost:8080/api/places",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get place",
+			"request": {
+				"url": "http://localhost:8080/api/places/3",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Add place",
+			"request": {
+				"url": "http://localhost:8080/api/places",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"zipCode\": 24000,\n\t\"name\": \"Subotica\",\n\t\"country\": {\n\t\t\"id\": 1\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Modify place",
+			"request": {
+				"url": "http://localhost:8080/api/places/2",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"zipCode\": 21000,\n\t\"name\": \"Novi Sad\",\n\t\"country\": {\n\t\t\"id\": 1\n\t}\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete place",
+			"request": {
+				"url": "http://localhost:8080/api/places/7",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Find places by name",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8080/api/places?name=Nov",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"places"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Nov",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Find country places",
+			"request": {
+				"url": "http://localhost:8080/api/countries/1/places",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
